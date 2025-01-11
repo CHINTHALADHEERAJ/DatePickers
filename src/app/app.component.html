@@ -1,1 +1,48 @@
- 
+<style>
+  .date-picker {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10%;
+    padding: 30px;
+    margin-left: 100px;
+    position: relative;
+    bottom: 150px;
+    right: 36px;
+
+  }
+
+  .form-text-content {
+    text-align: center;
+    margin-top: 10%;
+  }
+</style>
+
+<div class="form-text-content">
+  <h1>
+    ANGULAR MAT DATE PICKER EXAMPLE
+  </h1>
+</div>
+<div class="date-picker">
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field>
+        <mat-label>Choose from date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="example-full-width">
+        <mat-label>Choose to date</mat-label>
+        <input matInput [matDatepicker]="todate">
+        <mat-datepicker-toggle matIconSuffix [for]="todate"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #todate></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+</div>
