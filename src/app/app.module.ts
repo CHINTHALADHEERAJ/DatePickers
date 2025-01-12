@@ -10,7 +10,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
-import { AngualrDatePickerModuleEExample } from './angualr-date-picker/angualr-date-picker.module';
+import { AngularMatDatePickersModule } from "./angular-mat-date-pickers/angular-mat-date-pickers.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,8 +27,8 @@ import { AngualrDatePickerModuleEExample } from './angualr-date-picker/angualr-d
     MatButtonModule,
     MatDividerModule,
     MatInputModule,
-    AngualrDatePickerModuleEExample
-  ],
+    AngularMatDatePickersModule
+],
   providers: [
     MatFormFieldModule,
     MatDatepickerModule,

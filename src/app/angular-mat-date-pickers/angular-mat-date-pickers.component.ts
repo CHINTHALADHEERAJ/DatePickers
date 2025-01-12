@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-angualr-date-picker',
+  selector: 'app-angular-mat-date-pickers',
   standalone: false,
   
-  templateUrl: './angualr-date-picker.component.html',
-  styleUrl: './angualr-date-picker.component.scss'
+  templateUrl: './angular-mat-date-pickers.component.html',
+  styleUrl: './angular-mat-date-pickers.component.scss'
 })
-export class AngualrDatePickerComponent {
+export class AngularMatDatePickersComponent {
   angularMatDatePicker!:FormGroup
   constructor(private formbuilder :FormBuilder)
   {

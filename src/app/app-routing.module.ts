@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [{ path: 'AngualrDatePicker', loadChildren: () => import('./angualr-date-picker/angualr-date-picker.module').then(m => m.AngualrDatePickerModuleEExample) }];
+const routes: Routes = [ { path: 'AngularMatDatePickers', loadChildren: () => import('./angular-mat-date-pickers/angular-mat-date-pickers.module').then(m => m.AngularMatDatePickersModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
