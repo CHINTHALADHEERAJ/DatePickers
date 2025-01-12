@@ -1,4 +1,3 @@
- 
 <div class="date-picker-container">
   <h1 class="date-picker-header">
     Angular Material Date Picker Example
@@ -8,7 +7,8 @@
       <div class="col">
         <mat-form-field>
           <mat-label>Choose from date</mat-label>
-          <input matInput [matDatepicker]="fromdate" formControlName="formDate">
+          <input matInput [matDatepicker]="fromdate" formControlName="formDate" [min]="minDate" [max]="maxDate"
+            [matDatepickerFilter]="fromDate">
           <mat-datepicker-toggle matIconSuffix [for]="fromdate"></mat-datepicker-toggle>
           <mat-datepicker #fromdate></mat-datepicker>
         </mat-form-field>
@@ -16,7 +16,8 @@
       <div class="col">
         <mat-form-field>
           <mat-label>Choose to date</mat-label>
-          <input matInput [matDatepicker]="todate" formControlName="toDate">
+          <input matInput [matDatepicker]="todate" formControlName="toDate" [matDatepickerFilter]="toDate"
+            [min]="minDate" [max]="maxDate">
           <mat-datepicker-toggle matIconSuffix [for]="todate"></mat-datepicker-toggle>
           <mat-datepicker touchUi #todate></mat-datepicker>
         </mat-form-field>
