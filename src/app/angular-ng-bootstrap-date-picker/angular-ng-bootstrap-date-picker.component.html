@@ -1,8 +1,35 @@
+<style>
+    .custom-day {
+        text-align: center;
+        padding: 0.185rem 0.25rem;
+        border-radius: 100%;
+        display: inline-block;
+        width: 2rem;
+    }
+
+    .custom-day:hover,
+    .custom-day.focused {
+        background-color: #000000;
+        color: white;
+    }
+
+    .weekend {
+        background-color: #eaeaea;
+        border-radius: 100%;
+        color: rgb(0, 0, 0);
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+
 <form class="row row-cols-sm-auto" [formGroup]="ngDatePickerFrom">
     <div class="col-12">
         <div class="input-group">
             <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [placement]="placement"
-                [displayMonths]="displayMonths" [navigation]="navigation" [outsideDays]="outsideDays"
+                [displayMonths]="displayMonths"  [dayTemplate]="customDay" [navigation]="navigation" [outsideDays]="outsideDays"
                 [showWeekNumbers]="showWeekNumbers" ngbDatepicker #d="ngbDatepicker" formControlName="datePicker" />
             <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button">
                 <mat-icon>event</mat-icon>
@@ -22,3 +49,12 @@
         </div>
     </div>
 </div>
+<!-- [class.bg-primary]="selected" -->
+<ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled"
+    let-focused="focused">
+    <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"  
+        [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
+        {{ date.day }}
+    </span>
+</ng-template>
+ 
