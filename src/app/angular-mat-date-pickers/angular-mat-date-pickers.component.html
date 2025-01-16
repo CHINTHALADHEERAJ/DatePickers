@@ -1,24 +1,5 @@
 <style>
-    .date-picker-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 5%;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 60%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    .date-picker-header {
-      text-align: center;
-      font-family: Arial, sans-serif;
-      color: #333;
-      margin-bottom: 20px;
-    }
+
   
     .form-row {
       display: flex;
@@ -44,10 +25,7 @@
     }
   </style>
   
-  <div class="date-picker-container">
-    <h1 class="date-picker-header">
-      Angular Material Date Picker Example
-    </h1>
+ 
     <form [formGroup]="angularMatDatePicker">
       <div class="form-row">
         <div class="col">
@@ -73,4 +51,4 @@
         <button mat-flat-button color="warn" type="reset" (click)="clear()">Clear</button>
       </div>
     </form>
-  </div>
+ 

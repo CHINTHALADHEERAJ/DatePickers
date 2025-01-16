@@ -1,0 +1,24 @@
+<form class="row row-cols-sm-auto" [formGroup]="ngDatePickerFrom">
+    <div class="col-12">
+        <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [placement]="placement"
+                [displayMonths]="displayMonths" [navigation]="navigation" [outsideDays]="outsideDays"
+                [showWeekNumbers]="showWeekNumbers" ngbDatepicker #d="ngbDatepicker" formControlName="datePicker" />
+            <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button">
+                <mat-icon>event</mat-icon>
+                <!-- <mat-icon >calendar_today</mat-icon> -->
+            </button>
+        </div>
+    </div>
+</form>
+<div>
+    <br>
+    <div class="row">
+        <div class="col-6">
+            <button class="w-100 btn btn-primary">submit</button>
+        </div>
+        <div class="col-6">
+            <button class="w-100 btn btn-danger" (click)="clear()">clear</button>
+        </div>
+    </div>
+</div>
