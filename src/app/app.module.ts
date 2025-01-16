@@ -11,6 +11,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { AngularMatDatePickersModule } from "./angular-mat-date-pickers/angular-mat-date-pickers.module";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AngularNgBootstrapDatePickerModule } from "./angular-ng-bootstrap-date-picker/angular-ng-bootstrap-date-picker.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +29,9 @@ import { AngularMatDatePickersModule } from "./angular-mat-date-pickers/angular-
     MatButtonModule,
     MatDividerModule,
     MatInputModule,
-    AngularMatDatePickersModule
+    AngularMatDatePickersModule,
+    NgbModule,
+    AngularNgBootstrapDatePickerModule
 ],
   providers: [
     MatFormFieldModule,
