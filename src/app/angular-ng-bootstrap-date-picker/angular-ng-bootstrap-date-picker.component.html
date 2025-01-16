@@ -22,6 +22,10 @@
     .hidden {
         display: none;
     }
+
+    .white-icon {
+        color: rgb(255, 255, 255);
+    }
 </style>
 
 
@@ -29,10 +33,11 @@
     <div class="col-12">
         <div class="input-group">
             <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [placement]="placement"
-                [displayMonths]="displayMonths"  [dayTemplate]="customDay" [navigation]="navigation" [outsideDays]="outsideDays"
-                [showWeekNumbers]="showWeekNumbers" ngbDatepicker #d="ngbDatepicker" formControlName="datePicker" />
-            <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button">
-                <mat-icon>event</mat-icon>
+                [displayMonths]="displayMonths" [dayTemplate]="customDay" [navigation]="navigation"
+                [outsideDays]="outsideDays" [showWeekNumbers]="showWeekNumbers" ngbDatepicker #d="ngbDatepicker"
+                formControlName="datePicker" />
+            <button class="  btn btn-danger bi bi-calendar3" (click)="d.toggle()" type="button">
+                <mat-icon class="white-icon">event</mat-icon>
                 <!-- <mat-icon >calendar_today</mat-icon> -->
             </button>
         </div>
@@ -52,9 +57,8 @@
 <!-- [class.bg-primary]="selected" -->
 <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled"
     let-focused="focused">
-    <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"  
+    <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
         [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
         {{ date.day }}
     </span>
 </ng-template>
- 
