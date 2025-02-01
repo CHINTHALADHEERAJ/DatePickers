@@ -23,7 +23,7 @@ export class AngularNgBootstrapDatePickerComponent {
   navigation = 'select';
   showWeekNumbers = false;
   outsideDays = 'hidden';
-  placement = 'top';
+  placement = 'bottom';
  
   constructor(
     private fb: FormBuilder,
@@ -40,11 +40,14 @@ export class AngularNgBootstrapDatePickerComponent {
   ngOnInit() {
     // customize default values of datepickers used by this component tree
     var currentDate = new Date();
-    this.config.minDate = { year: 2025, month: 1, day: 1 };
-
+    this.config.minDate = { 
+      year: currentDate.getFullYear(), 
+      month: 1, 
+      day: 1 
+    };
     this.config.maxDate = {
       year: currentDate.getFullYear(),
-      month: 1,
+      month: 12,
       day: 31,
     };
 
@@ -64,6 +67,12 @@ export class AngularNgBootstrapDatePickerComponent {
     // setting datepicker popup to open above the input
     //  this.config.placement = ['top-start', 'top-end'];
  
+  }
+  isToday(date: NgbDate): boolean {
+    const today = new Date();
+    return date.year === today.getFullYear() &&
+           date.month === today.getMonth() + 1 &&
+           date.day === today.getDate();
   }
   clear() {
     this.ngDatePickerFrom.reset();
